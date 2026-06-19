@@ -10,6 +10,9 @@
   <meta property="og:description" content="AI agents · Voice AI · RAG · Applied LLMs" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aatuodcrd.github.io" />
+  <meta property="og:image" content="https://aatuodcrd.github.io/assets/logo.png" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="apple-touch-icon" href="assets/logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,6 +22,13 @@
     tailwind.config = { darkMode: 'class', theme: { extend: {
       fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
     }}};
+  </script>
+  <script>
+    // Theme decision runs before paint → no flash
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') document.documentElement.classList.remove('dark');
+    else if (saved === 'dark') document.documentElement.classList.add('dark');
+    else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.classList.remove('dark');
   </script>
 
   <style>
@@ -408,12 +418,14 @@
         <p class="mono text-xs accent mb-3">certifications</p>
         <ul>
           <li class="cert"><a href="assets/Papontee-AI-Savvy-True-Digital-Academy.pdf">AI Savvy — AI Literacy <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Jun 2026</span></li>
+          <li class="cert"><a href="https://www.skills.google/public_profiles/f7d529bc-60fa-4072-8350-18c51d12ccda" target="_blank" rel="noopener">Google Cloud Skill Badges (16) <span class="muted">(Google Cloud)</span></a><span class="mono text-xs muted">Apr 2026</span></li>
           <li class="cert"><a href="assets/Papontee-True-Internship-Program.pdf">True Internship Program — Digital <span class="muted">(True Corporation)</span></a><span class="mono text-xs muted">Feb 2026</span></li>
           <li class="cert"><a href="assets/Papontee-Databricks-Data-Engineer-Bootcamp.pdf">Databricks — Data Engineer Bootcamp <span class="muted">(Gosoft)</span></a><span class="mono text-xs muted">Jan 2026</span></li>
-          <li class="cert"><span>Coding with Python Kickstarter <span class="muted">(True Digital Academy)</span></span><span class="mono text-xs muted">Jan 2025</span></li>
+          <li class="cert"><a href="assets/Papontee-Coding-with-Python-Kickstarter.pdf">Coding with Python Kickstarter <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Jan 2025</span></li>
           <li class="cert"><a href="assets/Papontee-Agoda-Tech-Camp-Day.pdf">Agoda Tech Camp Day <span class="muted">(Agoda)</span></a><span class="mono text-xs muted">Nov 2024</span></li>
-          <li class="cert"><span>Data Analytics Specialize Track <span class="muted">(True Digital Academy)</span></span><span class="mono text-xs muted">Mar 2024</span></li>
-          <li class="cert"><span>Data Analytics Foundation <span class="muted">(True Digital Academy)</span></span><span class="mono text-xs muted">Feb 2024</span></li>
+          <li class="cert"><a href="assets/Papontee-Botnoi-Trainee-AI-Engineer.png">Botnoi Trainee — AI Engineer (NLP) <span class="muted">(Botnoi Group)</span></a><span class="mono text-xs muted">May 2024</span></li>
+          <li class="cert"><a href="assets/Papontee-Data-Analytics-Specialize-Track.pdf">Data Analytics Specialize Track <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Mar 2024</span></li>
+          <li class="cert"><a href="assets/Papontee-Data-Analytics-Foundation.pdf">Data Analytics Foundation <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Feb 2024</span></li>
         </ul>
         <p class="mono text-xs accent mt-6 mb-3">google cloud · skill boost</p>
         <div class="flex flex-wrap gap-2">
@@ -441,12 +453,8 @@
   </footer>
 
   <script>
-    // Theme: default to system, remember choice
+    // Theme toggle (initial decision already ran in <head>)
     const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    if (saved === 'light') root.classList.remove('dark');
-    else if (saved === 'dark') root.classList.add('dark');
-    else if (window.matchMedia('(prefers-color-scheme: light)').matches) root.classList.remove('dark');
     document.getElementById('themeToggle').addEventListener('click', () => {
       root.classList.toggle('dark');
       localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
