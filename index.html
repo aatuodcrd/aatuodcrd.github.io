@@ -59,7 +59,7 @@
     .muted{ color:var(--muted); }
     .line{ border-color:var(--line); }
 
-    .kicker{ font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.08em; color:var(--accent); text-transform:uppercase; }
+    .kicker{ font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.08em; color:var(--accent); }
     .hr{ height:1px; background:var(--line); }
 
     /* link underline reveal */
@@ -115,12 +115,12 @@
     <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
       <a href="#top" class="mono text-sm font-semibold">j.papontee<span class="accent typed-cursor">_</span></a>
       <div class="hidden md:flex items-center gap-7 mono text-[.82rem] muted">
-        <a href="#about" class="ulink">about</a>
-        <a href="#work" class="ulink">work</a>
-        <a href="#skills" class="ulink">skills</a>
-        <a href="#projects" class="ulink">projects</a>
-        <a href="#certs" class="ulink">certs</a>
-        <a href="#contact" class="ulink">contact</a>
+        <a href="#about" class="ulink">About</a>
+        <a href="#work" class="ulink">Work</a>
+        <a href="#skills" class="ulink">Skills</a>
+        <a href="#projects" class="ulink">Projects</a>
+        <a href="#certs" class="ulink">Certs</a>
+        <a href="#contact" class="ulink">Contact</a>
       </div>
       <div class="flex items-center gap-2">
         <button id="themeToggle" aria-label="Toggle theme" class="p-2 rounded-lg transition hover:text-[var(--accent)]" style="color:var(--muted)">
@@ -155,8 +155,8 @@
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3 no-print">
-          <a href="#projects" class="btn btn-solid">view work →</a>
-          <a href="assets/Papontee-Jaideesakunee-CV.pdf" download class="btn">download cv ↓</a>
+          <a href="#projects" class="btn btn-solid">View work →</a>
+          <a href="assets/Papontee-Jaideesakunee-CV.pdf" download class="btn">Download CV ↓</a>
         </div>
 
         <div class="mt-8 flex items-center gap-5 no-print" style="color:var(--muted)">
@@ -178,7 +178,7 @@
 
   <!-- ============== ABOUT ============== -->
   <section id="about" class="max-w-4xl mx-auto px-6 py-20 reveal">
-    <p class="kicker mb-2">01 — about</p>
+    <p class="kicker mb-2">01 — About</p>
     <h2 class="text-2xl font-semibold mb-8">Profile</h2>
     <div class="grid md:grid-cols-3 gap-8">
       <div class="md:col-span-2 space-y-4 leading-relaxed muted">
@@ -196,7 +196,7 @@
 
   <!-- ============== EXPERIENCE ============== -->
   <section id="work" class="max-w-4xl mx-auto px-6 py-20 reveal">
-    <p class="kicker mb-2">02 — experience</p>
+    <p class="kicker mb-2">02 — Experience</p>
     <h2 class="text-2xl font-semibold mb-10">Where I've worked</h2>
 
     <div class="space-y-10">
@@ -208,12 +208,12 @@
         </div>
         <p class="mt-3 text-sm muted">Solo-building a unified internal <span style="color:var(--text)">BC Platform</span> for Boutique's 8-hotel portfolio — revenue, BI, marketing, IT, and auth in one workspace, on React + PostgreSQL + AWS.</p>
         <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="card p-4"><p class="mono text-xs accent mb-1">revenue_dashboard</p><p class="text-sm muted">Hotel revenue-management dashboard (React · Vite · PostgreSQL · Recharts) — PMS &amp; competitor-rate ingestion, forecasting, and GPT-backed executive briefings.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">auth_service</p><p class="text-sm muted">Shared identity provider for the platform — RS256 JWT auth with refresh-token hardening and SMTP password reset, containerized with Docker.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">marketing_tools</p><p class="text-sm muted">Marketing-ops app across all 8 hotels — calendar, multi-stage approval workflows, creative-brief automation, and AI visibility audits.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">data_pipelines</p><p class="text-sm muted">Daily Pick-Up Report automation (Python) with report-lineage, plus a Guestline session-capture utility feeding AWS Secrets Manager.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">cloud_&amp;_security</p><p class="text-sm muted">Migrated apps off Firebase/GCP to AWS (RDS PostgreSQL, Terraform); implemented Postgres Row-Level Security and RDS TLS verification.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">hotel_websites</p><p class="text-sm muted">Rebuilt the Journeyhub site (Next.js + Node.js) with an editable CMS, and redesigned the Jono Hotels marketing site from its brand book.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Revenue Dashboard</p><p class="text-sm muted">Hotel revenue-management dashboard (React · Vite · PostgreSQL · Recharts) — PMS &amp; competitor-rate ingestion, forecasting, and GPT-backed executive briefings.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Auth Service</p><p class="text-sm muted">Shared identity provider for the platform — RS256 JWT auth with refresh-token hardening and SMTP password reset, containerized with Docker.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Marketing Tools</p><p class="text-sm muted">Marketing-ops app across all 8 hotels — calendar, multi-stage approval workflows, creative-brief automation, and AI visibility audits.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Data Pipelines</p><p class="text-sm muted">Daily Pick-Up Report automation (Python) with report-lineage, plus a Guestline session-capture utility feeding AWS Secrets Manager.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Cloud &amp; Security</p><p class="text-sm muted">Migrated apps off Firebase/GCP to AWS (RDS PostgreSQL, Terraform); implemented Postgres Row-Level Security and RDS TLS verification.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Hotel Websites</p><p class="text-sm muted">Rebuilt the Journeyhub site (Next.js + Node.js) with an editable CMS, and redesigned the Jono Hotels marketing site from its brand book.</p></div>
         </div>
       </div>
 
@@ -224,12 +224,12 @@
           <span class="mono text-xs muted">06/2025 – 02/2026</span>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="card p-4"><p class="mono text-xs accent mb-1">noah_ai</p><p class="text-sm muted">Architected a low-latency, multi-brand smart-home voice agent (MCP + Home Assistant); deployed the Next.js chat UI as a static app inside Home Assistant.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">truex_ai</p><p class="text-sm muted">Added device-control features for end-to-end smart-home operations; benchmarked command-execution reliability between LLM reasoning and device actions.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">agent_eval</p><p class="text-sm muted">Designed a Sequential Logic Evaluation framework validating multi-step agent workflows — tool-invocation order and inter-tool data passing.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">agentic_vision</p><p class="text-sm muted">Refactored a legacy object-detection pipeline into MCP using DINOv3, with an embedding-based semantic layer bridging language queries to system labels.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">voice_infra</p><p class="text-sm muted">Migrated LiveKit (WebRTC) → Pipecat (WebSocket), right-sizing the architecture and cutting cost for single-agent voice sessions.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">observability</p><p class="text-sm muted">Implemented tracing/observability with Opik to monitor complex agent workflows — detailed debugging and performance tracking in production.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Noah AI</p><p class="text-sm muted">Architected a low-latency, multi-brand smart-home voice agent (MCP + Home Assistant); deployed the Next.js chat UI as a static app inside Home Assistant.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">TrueX AI</p><p class="text-sm muted">Added device-control features for end-to-end smart-home operations; benchmarked command-execution reliability between LLM reasoning and device actions.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Agent Eval</p><p class="text-sm muted">Designed a Sequential Logic Evaluation framework validating multi-step agent workflows — tool-invocation order and inter-tool data passing.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Agentic Vision</p><p class="text-sm muted">Refactored a legacy object-detection pipeline into MCP using DINOv3, with an embedding-based semantic layer bridging language queries to system labels.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Voice Infra</p><p class="text-sm muted">Migrated LiveKit (WebRTC) → Pipecat (WebSocket), right-sizing the architecture and cutting cost for single-agent voice sessions.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Observability</p><p class="text-sm muted">Implemented tracing/observability with Opik to monitor complex agent workflows — detailed debugging and performance tracking in production.</p></div>
         </div>
       </div>
 
@@ -240,12 +240,12 @@
           <span class="mono text-xs muted">01/2024 – 06/2025</span>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="card p-4"><p class="mono text-xs accent mb-1">enterprise_rag</p><p class="text-sm muted">Engineered an end-to-end RAG ecosystem for an insurance provider — research and architecture through production deployment.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">rbac</p><p class="text-sm muted">Designed Role-Based Access Control with project-level isolation for secure access across enterprise departments.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">api_gateway</p><p class="text-sm muted">Built a secure B2B API Gateway (API-key auth) for external partners, with admin monitoring dashboards.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">microservices</p><p class="text-sm muted">Contributed to a backend microservices migration, improving system scalability and maintainability.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">cv_extraction</p><p class="text-sm muted">Developed an LLM-based CV extraction system to automate HR candidate screening and job matching.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">mentorship</p><p class="text-sm muted">Mentored and supervised 5 developer interns, ran code reviews, and upheld engineering quality.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Enterprise RAG</p><p class="text-sm muted">Engineered an end-to-end RAG ecosystem for an insurance provider — research and architecture through production deployment.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">RBAC</p><p class="text-sm muted">Designed Role-Based Access Control with project-level isolation for secure access across enterprise departments.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">API Gateway</p><p class="text-sm muted">Built a secure B2B API Gateway (API-key auth) for external partners, with admin monitoring dashboards.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Microservices</p><p class="text-sm muted">Contributed to a backend microservices migration, improving system scalability and maintainability.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">CV Extraction</p><p class="text-sm muted">Developed an LLM-based CV extraction system to automate HR candidate screening and job matching.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Mentorship</p><p class="text-sm muted">Mentored and supervised 5 developer interns, ran code reviews, and upheld engineering quality.</p></div>
         </div>
       </div>
 
@@ -256,9 +256,9 @@
           <span class="mono text-xs muted">10/2020 – Present</span>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div class="card p-4"><p class="mono text-xs accent mb-1">university_tutoring</p><p class="text-sm muted">Advanced mentoring in Calculus, Machine Learning, Computer Vision &amp; Deep Learning for university students.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">guest_instructor</p><p class="text-sm muted">Invited to deliver preparatory Calculus lectures for incoming engineering students.</p></div>
-          <div class="card p-4"><p class="mono text-xs accent mb-1">admissions_coaching</p><p class="text-sm muted">Designed Mathematics &amp; Science programs for competitive secondary-school admissions.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">University Tutoring</p><p class="text-sm muted">Advanced mentoring in Calculus, Machine Learning, Computer Vision &amp; Deep Learning for university students.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Guest Instructor</p><p class="text-sm muted">Invited to deliver preparatory Calculus lectures for incoming engineering students.</p></div>
+          <div class="card p-4"><p class="mono text-xs accent mb-1">Admissions Coaching</p><p class="text-sm muted">Designed Mathematics &amp; Science programs for competitive secondary-school admissions.</p></div>
         </div>
       </div>
     </div>
@@ -266,41 +266,41 @@
 
   <!-- ============== SKILLS ============== -->
   <section id="skills" class="max-w-4xl mx-auto px-6 py-20 reveal">
-    <p class="kicker mb-2">03 — skills</p>
+    <p class="kicker mb-2">03 — Skills</p>
     <h2 class="text-2xl font-semibold mb-8">Stack &amp; tooling</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">ai / ml</p>
+        <p class="mono text-xs accent mb-3">AI / ML</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">LLMs</span><span class="chip">Agentic AI</span><span class="chip">Orchestration</span><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">NLP</span><span class="chip">Embeddings</span><span class="chip">Vector Search</span><span class="chip">Agent Eval</span>
         </div>
       </div>
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">voice / realtime</p>
+        <p class="mono text-xs accent mb-3">Voice / Realtime</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">Low-latency Audio</span><span class="chip">Pipecat</span><span class="chip">WebSocket</span><span class="chip">WebRTC</span><span class="chip">LiveKit</span>
         </div>
       </div>
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">computer vision</p>
+        <p class="mono text-xs accent mb-3">Computer Vision</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">OpenCV</span><span class="chip">YOLO</span><span class="chip">Object Detection</span><span class="chip">DINOv3</span><span class="chip">Vision Pipelines</span>
         </div>
       </div>
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">backend / infra</p>
+        <p class="mono text-xs accent mb-3">Backend / Infra</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">FastAPI</span><span class="chip">Flask</span><span class="chip">REST</span><span class="chip">Microservices</span><span class="chip">AWS</span><span class="chip">Docker</span><span class="chip">MCP</span>
         </div>
       </div>
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">practices</p>
+        <p class="mono text-xs accent mb-3">Practices</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">pytest</span><span class="chip">Tracing / Opik</span><span class="chip">Structured Logging</span><span class="chip">Git</span><span class="chip">Linux</span>
         </div>
       </div>
       <div class="card p-5">
-        <p class="mono text-xs accent mb-3">languages</p>
+        <p class="mono text-xs accent mb-3">Languages</p>
         <div class="flex flex-wrap gap-2">
           <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Next.js</span><span class="chip">C#</span><span class="chip">English B1</span>
         </div>
@@ -310,7 +310,7 @@
 
   <!-- ============== PROJECTS ============== -->
   <section id="projects" class="max-w-4xl mx-auto px-6 py-20 reveal">
-    <p class="kicker mb-2">04 — projects</p>
+    <p class="kicker mb-2">04 — Projects</p>
     <h2 class="text-2xl font-semibold mb-8">Selected work</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
@@ -348,8 +348,8 @@
         <p class="text-sm muted mt-2 flex-1">Thai retirement-planning app — social security &amp; PVD, multi-plan comparison, no database.</p>
         <p class="mono text-[.7rem] muted mt-4">Vite · React</p>
         <p class="mono text-[.7rem] mt-3 flex gap-4 no-print">
-          <a href="https://aatuodcrd.github.io/retirement-planner/" class="ulink accent">live demo ↗</a>
-          <a href="https://github.com/aatuodcrd/retirement-planner" class="ulink muted">code ↗</a>
+          <a href="https://aatuodcrd.github.io/retirement-planner/" class="ulink accent">Live demo ↗</a>
+          <a href="https://github.com/aatuodcrd/retirement-planner" class="ulink muted">Code ↗</a>
         </p>
       </article>
 
@@ -367,12 +367,12 @@
         <p class="mono text-[.7rem] muted mt-4">TypeScript · Hooks · Plugin</p>
       </a>
     </div>
-    <p class="mt-6 mono text-sm no-print"><a href="https://github.com/aatuodcrd" class="ulink accent">more on github →</a></p>
+    <p class="mt-6 mono text-sm no-print"><a href="https://github.com/aatuodcrd" class="ulink accent">More on GitHub →</a></p>
   </section>
 
   <!-- ============== EDUCATION + CERTS ============== -->
   <section id="certs" class="max-w-4xl mx-auto px-6 py-20 reveal">
-    <p class="kicker mb-2">05 — education &amp; certs</p>
+    <p class="kicker mb-2">05 — Education &amp; Certs</p>
     <h2 class="text-2xl font-semibold mb-8">Credentials</h2>
     <div class="grid md:grid-cols-2 gap-10">
       <div>
@@ -387,7 +387,7 @@
           </div>
         </div>
         <div class="mt-6">
-          <p class="mono text-xs accent mb-3">activities</p>
+          <p class="mono text-xs accent mb-3">Activities</p>
           <ul class="space-y-2 text-sm muted">
             <li class="flex gap-2"><span class="accent mono">+</span> Faculty Ambassador &amp; IoT Workshop Instructor (2024)</li>
             <li class="flex gap-2"><span class="accent mono">+</span> Calculus Foundation for First-Year Engineers (2024)</li>
@@ -395,7 +395,7 @@
           </ul>
         </div>
         <div class="mt-6">
-          <p class="mono text-xs accent mb-3">earlier education</p>
+          <p class="mono text-xs accent mb-3">Earlier Education</p>
           <div class="space-y-3">
             <div class="card p-4">
               <div class="flex justify-between items-baseline gap-2 flex-wrap">
@@ -415,7 +415,7 @@
         </div>
       </div>
       <div>
-        <p class="mono text-xs accent mb-3">certifications</p>
+        <p class="mono text-xs accent mb-3">Certifications</p>
         <ul>
           <li class="cert"><a href="assets/Papontee-AI-Savvy-True-Digital-Academy.pdf">AI Savvy — AI Literacy <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Jun 2026</span></li>
           <li class="cert"><a href="assets/Papontee-True-Internship-Program.pdf">True Internship Program — Digital <span class="muted">(True Corporation)</span></a><span class="mono text-xs muted">Feb 2026</span></li>
@@ -427,8 +427,8 @@
           <li class="cert"><a href="assets/Papontee-Data-Analytics-Foundation.pdf">Data Analytics Foundation <span class="muted">(True Digital Academy)</span></a><span class="mono text-xs muted">Feb 2024</span></li>
         </ul>
         <div class="flex items-baseline justify-between mt-8 mb-3">
-          <p class="mono text-xs accent">google cloud · skill boost — ai &amp; dev</p>
-          <a href="credentials.html" class="mono text-xs ulink">all 24 →</a>
+          <p class="mono text-xs accent">Google Cloud · Skill Boost — AI &amp; Dev</p>
+          <a href="credentials.html" class="mono text-xs ulink">All 24 →</a>
         </div>
         <ul>
           <li class="cert"><a href="https://www.skills.google/public_profiles/f7d529bc-60fa-4072-8350-18c51d12ccda/badges/23492858" target="_blank" rel="noopener">Prompt Design in Vertex AI</a><span class="mono text-xs muted">GenAI</span></li>
@@ -448,19 +448,19 @@
 
   <!-- ============== CONTACT ============== -->
   <section id="contact" class="max-w-4xl mx-auto px-6 py-24 reveal">
-    <p class="kicker mb-2">06 — contact</p>
+    <p class="kicker mb-2">06 — Contact</p>
     <h2 class="text-3xl sm:text-4xl font-bold">Let's build something.</h2>
     <p class="mt-4 muted max-w-lg">Open to AI Engineering roles and interesting collaborations. Questions or just a hello — my inbox is always open.</p>
     <div class="mt-7 flex flex-wrap gap-3">
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=papontee.jai@gmail.com" target="_blank" rel="noopener" class="btn btn-solid">say hello →</a>
-      <a href="https://www.linkedin.com/in/papontee/" class="btn">linkedin</a>
-      <a href="https://github.com/aatuodcrd" class="btn">github</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=papontee.jai@gmail.com" target="_blank" rel="noopener" class="btn btn-solid">Say hello →</a>
+      <a href="https://www.linkedin.com/in/papontee/" class="btn">LinkedIn</a>
+      <a href="https://github.com/aatuodcrd" class="btn">GitHub</a>
     </div>
     <p class="mt-10 mono text-sm muted"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=papontee.jai@gmail.com" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition" style="color:inherit">papontee.jai@gmail.com</a> · <a href="https://www.google.com/maps/search/?api=1&query=Bangkok%2C%20Thailand" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition" style="color:inherit">Bangkok, Thailand</a></p>
   </section>
 
   <footer class="py-8 text-center mono text-xs muted" style="border-top:1px solid var(--line)">
-    <p>designed &amp; built by Papontee Jaideesakunee · <a href="https://github.com/aatuodcrd" class="ulink">github.com/aatuodcrd</a></p>
+    <p>Designed &amp; built by Papontee Jaideesakunee · <a href="https://github.com/aatuodcrd" class="ulink">github.com/aatuodcrd</a></p>
   </footer>
 
   <script>
@@ -472,7 +472,7 @@
     });
 
     // Typing effect
-    const words = ['ai agents', 'voice ai systems', 'rag pipelines', 'agentic workflows', 'production ai'];
+    const words = ['AI agents', 'voice AI systems', 'RAG pipelines', 'agentic workflows', 'production AI'];
     const el = document.getElementById('typed');
     let wi = 0, ci = 0, deleting = false;
     (function type() {
