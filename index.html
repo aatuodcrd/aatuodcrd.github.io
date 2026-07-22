@@ -16,11 +16,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = { darkMode: 'class', theme: { extend: {
-      fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'] },
+      fontFamily: { sans: ['Inter','sans-serif'], mono: ['JetBrains Mono','monospace'], display: ['Space Grotesk','sans-serif'] },
     }}};
   </script>
   <script>
@@ -33,34 +33,54 @@
 
   <style>
     :root{
-      --bg:#fbfbfa; --surface:#ffffff; --text:#0c0d0e; --muted:#5a6066;
-      --line:rgba(12,13,14,.10); --line-strong:rgba(12,13,14,.16);
-      --accent:#0e7c8b; --accent-soft:rgba(14,124,139,.10); --dot:rgba(12,13,14,.06);
+      --bg:#f7f8f8; --surface:#ffffff; --text:#0b0d10; --muted:#565f68;
+      --line:rgba(11,13,16,.10); --line-strong:rgba(11,13,16,.17);
+      --accent:#0d7d8c; --accent-2:#5757d6;
+      --accent-soft:rgba(13,125,140,.10); --dot:rgba(11,13,16,.055);
+      --glow-1:rgba(13,125,140,.20); --glow-2:rgba(87,87,214,.14);
     }
     .dark{
-      --bg:#0a0b0d; --surface:#0f1114; --text:#e8eaec; --muted:#878d94;
-      --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.14);
-      --accent:#4ec9d6; --accent-soft:rgba(78,201,214,.12); --dot:rgba(255,255,255,.045);
+      --bg:#080a0d; --surface:#0e1216; --text:#e7ecef; --muted:#8a939c;
+      --line:rgba(255,255,255,.08); --line-strong:rgba(255,255,255,.15);
+      --accent:#4fd1c5; --accent-2:#8b8bf5;
+      --accent-soft:rgba(79,209,197,.12); --dot:rgba(255,255,255,.05);
+      --glow-1:rgba(79,209,197,.16); --glow-2:rgba(139,139,245,.13);
     }
     *{ -webkit-font-smoothing:antialiased; }
     body{ font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); }
 
+    h1,h2,h3,.display{ font-family:'Space Grotesk',sans-serif; letter-spacing:-.01em; }
+
     /* faint blueprint dot-grid that fades toward the bottom */
     body::before{
-      content:''; position:fixed; inset:0; z-index:-1; pointer-events:none;
+      content:''; position:fixed; inset:0; z-index:-2; pointer-events:none;
       background-image:radial-gradient(var(--dot) 1px, transparent 1px);
       background-size:26px 26px;
       -webkit-mask-image:radial-gradient(120% 80% at 50% 0%, #000 35%, transparent 80%);
               mask-image:radial-gradient(120% 80% at 50% 0%, #000 35%, transparent 80%);
     }
+    /* soft aurora glow behind the hero */
+    body::after{
+      content:''; position:fixed; top:-14%; right:-8%; width:60vw; height:60vw; max-width:720px; max-height:720px;
+      z-index:-1; pointer-events:none; border-radius:50%;
+      background:radial-gradient(circle at 30% 30%, var(--glow-1), transparent 60%),
+                radial-gradient(circle at 70% 70%, var(--glow-2), transparent 62%);
+      filter:blur(30px); opacity:.9; animation:drift 18s ease-in-out infinite alternate;
+    }
+    @keyframes drift{ from{ transform:translate(0,0) scale(1) } to{ transform:translate(-4%,4%) scale(1.08) } }
 
     .mono{ font-family:'JetBrains Mono',monospace; }
     .accent{ color:var(--accent); }
     .muted{ color:var(--muted); }
     .line{ border-color:var(--line); }
+    .grad-text{ background:linear-gradient(100deg, var(--accent), var(--accent-2)); -webkit-background-clip:text; background-clip:text; color:transparent; }
 
     .kicker{ font-family:'JetBrains Mono',monospace; font-size:.78rem; letter-spacing:.08em; color:var(--accent); }
     .hr{ height:1px; background:var(--line); }
+
+    .pill{ display:inline-flex; align-items:center; gap:.5rem; font-family:'JetBrains Mono',monospace; font-size:.72rem; letter-spacing:.03em; padding:.35rem .75rem; border-radius:999px; background:var(--accent-soft); color:var(--accent); border:1px solid var(--line); }
+    .pulse-dot{ width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 0 var(--accent); animation:pulse 2s ease-out infinite; }
+    @keyframes pulse{ 0%{ box-shadow:0 0 0 0 var(--accent-soft) } 70%{ box-shadow:0 0 0 6px transparent } 100%{ box-shadow:0 0 0 0 transparent } }
 
     /* link underline reveal */
     .ulink{ position:relative; color:var(--text); }
@@ -69,8 +89,8 @@
     .ulink:hover::after{ width:100%; }
 
     /* hairline cards */
-    .card{ background:var(--surface); border:1px solid var(--line); border-radius:14px; transition:border-color .25s ease, transform .25s ease, background .25s ease; }
-    .card:hover{ border-color:var(--accent); }
+    .card{ position:relative; background:var(--surface); border:1px solid var(--line); border-radius:14px; transition:border-color .25s ease, transform .25s ease, box-shadow .25s ease, background .25s ease; }
+    .card:hover{ border-color:var(--accent); box-shadow:0 10px 30px -18px var(--glow-1); }
 
     .chip{ font-family:'JetBrains Mono',monospace; font-size:.72rem; padding:.3rem .55rem; border:1px solid var(--line); border-radius:7px; color:var(--muted); transition:.2s; }
     .chip:hover{ border-color:var(--accent); color:var(--accent); }
@@ -132,12 +152,14 @@
       .card:hover{ transform:none; }
       .typed-cursor{ animation:none; }
       #progress{ transition:none; }
+      body::after{ animation:none; }
+      .pulse-dot{ animation:none; }
     }
 
     @media print{
       .no-print{ display:none !important; }
       body{ background:#fff !important; color:#000 !important; }
-      body::before{ display:none; }
+      body::before, body::after{ display:none; }
       .card{ border-color:#ddd !important; }
       a{ color:#000 !important; }
       section{ padding:14px 0 !important; }
@@ -188,25 +210,37 @@
   </header>
 
   <!-- ============== HERO ============== -->
-  <section id="top" class="min-h-screen flex items-center pt-14">
-    <div class="max-w-4xl mx-auto px-6 w-full grid md:grid-cols-[1fr_auto] items-center gap-12">
+  <section id="top" class="min-h-screen flex items-center pt-20 pb-16">
+    <div class="max-w-4xl mx-auto px-6 w-full grid md:grid-cols-[1fr_auto] items-center gap-10 md:gap-14">
       <div>
-        <p class="kicker mb-5">AI Engineer · <a href="https://www.google.com/maps/search/?api=1&query=Bangkok%2C%20Thailand" target="_blank" rel="noopener" class="hover:underline" style="color:inherit">Bangkok, TH</a></p>
-        <h1 class="text-[2.6rem] sm:text-6xl font-bold tracking-tight leading-[1.05]">
-          Papontee<br/>Jaideesakunee
+        <span class="pill mb-6"><span class="pulse-dot"></span>Available for AI Engineering roles</span>
+
+        <h1 class="text-[2.9rem] sm:text-[4.4rem] font-bold leading-[.98]">
+          Papontee<br/><span class="grad-text">Jaideesakunee</span>
         </h1>
 
-        <div class="mt-6 mono text-sm sm:text-base rounded-xl px-4 py-3 inline-flex items-center gap-2" style="background:var(--surface); border:1px solid var(--line);">
-          <span class="accent">$</span>
-          <span class="muted">building</span>
-          <span id="typed" class="font-medium"></span><span class="typed-cursor accent">▍</span>
+        <p class="mt-4 display text-lg sm:text-xl" style="color:var(--muted)">
+          AI Engineer · <a href="https://www.google.com/maps/search/?api=1&query=Bangkok%2C%20Thailand" target="_blank" rel="noopener" class="hover:text-[var(--accent)] transition" style="color:inherit">Bangkok, TH</a>
+        </p>
+
+        <!-- terminal status card -->
+        <div class="mt-7 rounded-xl overflow-hidden max-w-md" style="background:var(--surface); border:1px solid var(--line);">
+          <div class="flex items-center gap-1.5 px-3.5 py-2" style="border-bottom:1px solid var(--line)">
+            <span class="w-2.5 h-2.5 rounded-full" style="background:#ff5f57"></span>
+            <span class="w-2.5 h-2.5 rounded-full" style="background:#febc2e"></span>
+            <span class="w-2.5 h-2.5 rounded-full" style="background:#28c840"></span>
+            <span class="mono text-[.68rem] muted ml-2">~/papontee</span>
+          </div>
+          <div class="mono text-sm px-4 py-3 flex items-center gap-2">
+            <span class="accent">$</span><span class="muted">building</span>
+            <span id="typed" class="font-medium"></span><span class="typed-cursor accent">▍</span>
+          </div>
         </div>
 
-        <p class="mt-6 max-w-xl leading-relaxed muted">
-          AI Engineer specializing in <span style="color:var(--text)">AI agents</span>,
-          <span style="color:var(--text)">voice-driven systems</span>, and applied AI. I pair strong
-          mathematical foundations with hands-on experience designing scalable pipelines and
-          shipping intelligent systems to production.
+        <p class="mt-7 max-w-xl leading-relaxed muted">
+          I build <span style="color:var(--text)">AI agents</span>,
+          <span style="color:var(--text)">voice-driven systems</span>, and applied LLMs — pairing strong
+          mathematical foundations with hands-on experience shipping scalable, production-grade AI.
         </p>
 
         <div class="mt-8 flex flex-wrap items-center gap-3 no-print">
@@ -221,11 +255,11 @@
         </div>
       </div>
 
-      <!-- profile photo -->
-      <div class="hidden md:block">
-        <div class="relative w-44 h-44">
-          <div class="absolute -inset-2 rounded-2xl" style="border:1px solid var(--line)"></div>
-          <img src="assets/papontee-avatar.jpg" alt="Papontee Jaideesakunee" loading="lazy" class="w-full h-full rounded-2xl object-cover" style="border:1px solid var(--line-strong)" />
+      <!-- profile photo with glow ring -->
+      <div class="order-first md:order-none">
+        <div class="relative w-32 h-32 md:w-48 md:h-48 mx-auto">
+          <div class="absolute -inset-3 rounded-[1.6rem] opacity-70" style="background:linear-gradient(140deg, var(--glow-1), var(--glow-2)); filter:blur(16px)"></div>
+          <img src="assets/papontee-avatar.jpg" alt="Papontee Jaideesakunee" class="relative w-full h-full rounded-[1.4rem] object-cover" style="border:1px solid var(--line-strong)" />
         </div>
       </div>
     </div>
@@ -434,6 +468,13 @@
         <h3 class="font-semibold">claude-office <span class="muted group-hover:text-[var(--accent)] transition mono text-sm">↗</span></h3>
         <p class="text-sm muted mt-2 flex-1">Contributor to <span class="accent">paulrobello/claude-office</span> — shipped the <strong>Command Center</strong> cross-terminal session overview and a full-system QA sweep across backend, frontend, hooks &amp; plugin.</p>
         <p class="mono text-[.7rem] muted mt-4">TypeScript · Hooks · Plugin</p>
+      </a>
+
+      <a href="https://github.com/aatuodcrd/tile-terminals" class="card p-5 flex flex-col group">
+        <div class="flex justify-between items-center mb-3"><span class="mono text-xs muted">08</span><span class="muted group-hover:text-[var(--accent)] transition mono text-sm">↗</span></div>
+        <h3 class="font-semibold">tile-terminals</h3>
+        <p class="text-sm muted mt-2 flex-1">Auto-arranges every open macOS Terminal window into a non-overlapping grid that fills the screen — one keystroke.</p>
+        <p class="mono text-[.7rem] muted mt-4">AppleScript · macOS</p>
       </a>
     </div>
     <p class="mt-6 mono text-sm no-print"><a href="https://github.com/aatuodcrd" class="ulink accent">More on GitHub →</a></p>
