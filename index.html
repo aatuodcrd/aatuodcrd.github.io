@@ -69,6 +69,10 @@
     }
     @keyframes drift{ from{ transform:translate(0,0) scale(1) } to{ transform:translate(-4%,4%) scale(1.08) } }
 
+    /* fluid page container — fills the viewport instead of a fixed narrow column */
+    .wrap{ width:100%; padding-inline:clamp(1.15rem, 4.5vw, 4rem); }
+    .prose-col{ max-width:68ch; }
+
     .mono{ font-family:'JetBrains Mono',monospace; }
     .accent{ color:var(--accent); }
     .muted{ color:var(--muted); }
@@ -176,7 +180,7 @@
 
   <!-- ============== NAV ============== -->
   <header class="no-print fixed top-0 inset-x-0 z-50 backdrop-blur-md" style="background:color-mix(in srgb, var(--bg) 78%, transparent); border-bottom:1px solid var(--line);">
-    <nav class="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+    <nav class="wrap h-14 flex items-center justify-between">
       <a href="#top" class="mono text-sm font-semibold">j.papontee<span class="accent typed-cursor">_</span></a>
       <div id="navLinks" class="hidden md:flex items-center gap-7 mono text-[.82rem] muted">
         <a href="#about" class="ulink">About</a>
@@ -211,11 +215,11 @@
 
   <!-- ============== HERO ============== -->
   <section id="top" class="min-h-screen flex items-center pt-20 pb-16">
-    <div class="max-w-4xl mx-auto px-6 w-full grid md:grid-cols-[1fr_auto] items-center gap-10 md:gap-14">
+    <div class="wrap w-full grid md:grid-cols-[1fr_auto] items-center gap-10 md:gap-14">
       <div>
         <span class="pill mb-6"><span class="pulse-dot"></span>Available for AI Engineering roles</span>
 
-        <h1 class="text-[2.9rem] sm:text-[4.4rem] font-bold leading-[.98]">
+        <h1 class="text-[2.9rem] sm:text-[4.4rem] xl:text-[5.6rem] font-bold leading-[.98]">
           Papontee<br/><span class="grad-text">Jaideesakunee</span>
         </h1>
 
@@ -224,7 +228,7 @@
         </p>
 
         <!-- terminal status card -->
-        <div class="mt-7 rounded-xl overflow-hidden max-w-md" style="background:var(--surface); border:1px solid var(--line);">
+        <div class="mt-7 rounded-xl overflow-hidden max-w-md xl:max-w-lg" style="background:var(--surface); border:1px solid var(--line);">
           <div class="flex items-center gap-1.5 px-3.5 py-2" style="border-bottom:1px solid var(--line)">
             <span class="w-2.5 h-2.5 rounded-full" style="background:#ff5f57"></span>
             <span class="w-2.5 h-2.5 rounded-full" style="background:#febc2e"></span>
@@ -237,7 +241,7 @@
           </div>
         </div>
 
-        <p class="mt-7 max-w-xl leading-relaxed muted">
+        <p class="mt-7 max-w-xl xl:max-w-2xl leading-relaxed muted">
           I build <span style="color:var(--text)">AI agents</span>,
           <span style="color:var(--text)">voice-driven systems</span>, and applied LLMs — pairing strong
           mathematical foundations with hands-on experience shipping scalable, production-grade AI.
@@ -257,7 +261,7 @@
 
       <!-- profile photo with glow ring -->
       <div class="order-first md:order-none">
-        <div class="relative w-32 h-32 md:w-48 md:h-48 mx-auto">
+        <div class="relative w-32 h-32 md:w-48 md:h-48 xl:w-60 xl:h-60 mx-auto">
           <div class="absolute -inset-3 rounded-[1.6rem] opacity-70" style="background:linear-gradient(140deg, var(--glow-1), var(--glow-2)); filter:blur(16px)"></div>
           <img src="assets/papontee-avatar.jpg" alt="Papontee Jaideesakunee" class="relative w-full h-full rounded-[1.4rem] object-cover" style="border:1px solid var(--line-strong)" />
         </div>
@@ -266,16 +270,16 @@
   </section>
 
   <!-- ============== ABOUT ============== -->
-  <section id="about" class="max-w-4xl mx-auto px-6 py-20 reveal">
+  <section id="about" class="wrap py-20 reveal">
     <p class="kicker mb-2">01 — About</p>
     <h2 class="text-2xl font-semibold mb-8">Profile</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class="md:col-span-2 space-y-4 leading-relaxed muted">
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div class="md:col-span-2 prose-col space-y-4 leading-relaxed muted">
         <p>I'm an <span style="color:var(--text)">AI Engineer</span> based in Bangkok, currently at <a href="https://www.boutiquecorporation.com/th/home" target="_blank" rel="noopener" style="color:var(--text)" class="hover:text-[var(--accent)] transition">Boutique Corporation (PCL)</a>. Previously I built agentic and voice-driven AI at <a href="https://www.truedigital.com/th/" target="_blank" rel="noopener" style="color:var(--text)" class="hover:text-[var(--accent)] transition">True Digital Group (TrueX AI)</a>, covering the full stack of applied AI — research and architecture through production deployment and observability.</p>
         <p>I've architected a <span style="color:var(--text)">multi-brand voice AI agent</span> (Noah AI), engineered <span style="color:var(--text)">enterprise RAG ecosystems</span>, designed <span style="color:var(--text)">AI agent evaluation frameworks</span>, and refactored vision pipelines into MCP-based architectures. I care about latency, reliability, and right-sizing systems for real cost savings.</p>
         <p>Outside of work I've mentored students in Calculus, ML, Computer Vision, and Deep Learning for 5+ years.</p>
       </div>
-      <div class="space-y-3">
+      <div class="space-y-3 lg:col-span-2 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-3 lg:content-start">
         <div class="card p-4"><p class="mono text-2xl accent">3.92</p><p class="text-xs muted mt-1">GPA · First Class Honors</p></div>
         <div class="card p-4"><p class="mono text-2xl accent">5+</p><p class="text-xs muted mt-1">years mentoring AI &amp; math</p></div>
         <div class="card p-4"><p class="mono text-2xl accent">CP</p><p class="text-xs muted mt-1">scholarship recipient</p></div>
@@ -284,7 +288,7 @@
   </section>
 
   <!-- ============== EXPERIENCE ============== -->
-  <section id="work" class="max-w-4xl mx-auto px-6 py-20 reveal">
+  <section id="work" class="wrap py-20 reveal">
     <p class="kicker mb-2">02 — Experience</p>
     <h2 class="text-2xl font-semibold mb-10">Where I've worked</h2>
 
@@ -296,7 +300,7 @@
           <span class="mono text-xs muted">04/2026 – Present</span>
         </div>
         <p class="mt-3 text-sm muted">Solo-building a unified internal <span style="color:var(--text)">BC Platform</span> for Boutique's 8-hotel portfolio — revenue, BI, marketing, HR, IT, and auth in one workspace, on React + PostgreSQL + AWS.</p>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
+        <div class="mt-4 grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
           <div class="card p-4"><p class="mono text-xs accent mb-1">Revenue Dashboard</p><p class="text-sm muted">Hotel revenue-management dashboard (React · Vite · PostgreSQL · Recharts) — PMS &amp; competitor-rate ingestion, forecasting, and GPT-backed executive briefings.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">Auth &amp; RBAC</p><p class="text-sm muted">Shared identity provider — RS256 JWT with refresh-token hardening, username-or-email password reset, and fine-grained product-scoped roles across platform apps.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">Marketing Tools</p><p class="text-sm muted">Marketing-ops app across all 8 hotels — calendar, multi-stage approval workflows, and creative-brief automation.</p></div>
@@ -318,7 +322,7 @@
           <span class="phase-meta">06/2025 – 02/2026</span>
           <a href="assets/Papontee-True-Internship-Program.pdf" target="_blank" rel="noopener" class="cred-link" aria-label="Open True Digital internship certificate"><svg width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 9L9 1M9 1H3M9 1V7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Certificate</a>
         </div>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
+        <div class="mt-4 grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
           <div class="card p-4"><p class="mono text-xs accent mb-1">Noah AI</p><p class="text-sm muted">Architected a low-latency, multi-brand smart-home voice agent (MCP + Home Assistant); deployed the Next.js chat UI as a static app inside Home Assistant.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">TrueX AI</p><p class="text-sm muted">Added device-control features for end-to-end smart-home operations; benchmarked command-execution reliability between LLM reasoning and device actions.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">Agent Eval</p><p class="text-sm muted">Designed a Sequential Logic Evaluation framework validating multi-step agent workflows — tool-invocation order and inter-tool data passing.</p></div>
@@ -343,7 +347,7 @@
           <span class="phase-type alt">PART-TIME</span>
           <span class="phase-meta">Junior AI Engineer · 06/2024 – 06/2025</span>
         </div>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
+        <div class="mt-4 grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
           <div class="card p-4"><p class="mono text-xs accent mb-1">Enterprise RAG</p><p class="text-sm muted">Engineered an end-to-end RAG ecosystem for an insurance provider — research and architecture through production deployment.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">RBAC</p><p class="text-sm muted">Designed Role-Based Access Control with project-level isolation for secure access across enterprise departments.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">API Gateway</p><p class="text-sm muted">Built a secure B2B API Gateway (API-key auth) for external partners, with admin monitoring dashboards.</p></div>
@@ -359,7 +363,7 @@
           <h3 class="text-lg font-semibold">Freelance STEM &amp; AI Tutor · <span class="accent">Independent</span></h3>
           <span class="mono text-xs muted">10/2020 – Present</span>
         </div>
-        <div class="mt-4 grid sm:grid-cols-2 gap-3">
+        <div class="mt-4 grid sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-3">
           <div class="card p-4"><p class="mono text-xs accent mb-1">University Tutoring</p><p class="text-sm muted">Advanced mentoring in Calculus, Machine Learning, Computer Vision &amp; Deep Learning for university students.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">Guest Instructor</p><p class="text-sm muted">Invited to deliver preparatory Calculus lectures for incoming engineering students.</p></div>
           <div class="card p-4"><p class="mono text-xs accent mb-1">Admissions Coaching</p><p class="text-sm muted">Designed Mathematics &amp; Science programs for competitive secondary-school admissions.</p></div>
@@ -369,7 +373,7 @@
   </section>
 
   <!-- ============== SKILLS ============== -->
-  <section id="skills" class="max-w-4xl mx-auto px-6 py-20 reveal">
+  <section id="skills" class="wrap py-20 reveal">
     <p class="kicker mb-2">03 — Skills</p>
     <h2 class="text-2xl font-semibold mb-8">Stack &amp; tooling</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -413,7 +417,7 @@
   </section>
 
   <!-- ============== PROJECTS ============== -->
-  <section id="projects" class="max-w-4xl mx-auto px-6 py-20 reveal">
+  <section id="projects" class="wrap py-20 reveal">
     <p class="kicker mb-2">04 — Projects</p>
     <h2 class="text-2xl font-semibold mb-8">Selected work</h2>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -489,7 +493,7 @@
   </section>
 
   <!-- ============== EDUCATION + CERTS ============== -->
-  <section id="certs" class="max-w-4xl mx-auto px-6 py-20 reveal">
+  <section id="certs" class="wrap py-20 reveal">
     <p class="kicker mb-2">05 — Education &amp; Certs</p>
     <h2 class="text-2xl font-semibold mb-8">Credentials</h2>
     <div class="grid md:grid-cols-2 gap-10">
@@ -565,7 +569,7 @@
   </section>
 
   <!-- ============== CONTACT ============== -->
-  <section id="contact" class="max-w-4xl mx-auto px-6 py-24 reveal">
+  <section id="contact" class="wrap py-24 reveal">
     <p class="kicker mb-2">06 — Contact</p>
     <h2 class="text-3xl sm:text-4xl font-bold">Let's build something.</h2>
     <p class="mt-4 muted max-w-lg">Open to AI Engineering roles and interesting collaborations. Questions or just a hello — my inbox is always open.</p>
